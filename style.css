@@ -1,0 +1,55 @@
+ul {
+  margin: 15px 0px 15px 30px;
+  padding: 10px 10px;
+
+  & li {
+    line-height: 2;
+  }
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+h3 {
+  margin: 20px 0px 10px 0;
+}
+
+.w3-example {
+  margin: 10px 0px 30px 0;
+  background-color: #ff6e20;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  padding-top: 5px;
+
+
+}
+
+.w3-code {
+  background-color: rgb(237, 252, 255);
+  padding: 20px;
+  color: rgb(31, 32, 32);
+}
+
+.learn_more_link {
+
+  text-align: center;
+  margin-top: 3rem;
+  display: block;
+
+
+  & button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    background-color: #ff6e20;
+    padding: 5px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+      }
+      .container {
+        max-width: 70%;
+        margin-top: 20px;
+        /* background-color: #ffffff; */
+        /* border-radius: 20px; */
+        padding: 30px 10px 30px 5px;
+        /* box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1); */
+      }
+      .tab_btn {
+        display: flex;
+        align-items: center;
+        /* justify-content: space-around; */
+        margin-bottom: 30px;
+        border-bottom: 3px solid #ff6e20;
+        padding: 0px 0px;
+        position: relative;
+        & .tab_links {
+          font-size: 20px;
+          border: none;
+          background: none;
+          font-weight: 700;
+          color: rgb(0, 0, 0);
+          padding: 15px 50px;
+
+          &:hover {
+            color: #00ffe5;
+            cursor: pointer;
+          }
+        }
+      }
+      .tab-content {
+        font-family: Arial, Helvetica, sans-serif;
+        display: none;
+        & h1 {
+          font-size: 1.5rem;
+          font-weight: bolder;
+          padding: 5px;
+        }
+        & p {
+          font-size: 1.1rem;
+          padding: 10px 10px 20px 5px;
+        }
+        /* transition: all 3s ease-in-out; */
+        animation: moving 0.4s ease;
+      }
+      .container .tab_btn .line {
+        position: absolute;
+        bottom: -2px;
+        left: 0px;
+        background-color: rgb(255, 153, 0);
+        height: 3.5rem;
+        width: 156px;
+        z-index: -1;
+        transition: all 0.4s ease-in-out;
+        animation: bhagMilkhaBhag 1s ease-in-out;
+      }
+      .tab_btn .active {
+        color: #ffffff;
+        /* background-color: #ff6e20; */
+      }
+      @keyframes bhagMilkhaBhag {
+        0% {
+          translate: 0, 30px;
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes moving {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab_btn">
+        <button class="tab_links active">HTML</button
+        ><button class="tab_links">CSS</button
+        ><button class="tab_links">JavaScript</button>
+        <div class="line"></div>
+      </div>
+
+      <div class="tab-content">
+        <h1>What is HTML?</h1>
+        <ul>
+          <li>HTML stands for Hyper Text Markup Language</li>
+          <li>HTML is the standard markup language for creating Web pages</li>
+          <li>HTML describes the structure of a Web page</li>
+          <li>HTML consists of a series of elements</li>
+          <li>HTML elements tell the browser how to display the content</li>
+          <li>
+            HTML elements label pieces of content such as "this is a heading",
+            "this is a paragraph", "this is a link", etc.
+          </li>
+        </ul>
+        <hr />
+        <h2>A Simple HTML Document</h2>
+        <div class="w3-example">
+          <h3>Example</h3>
+          <div class="w3-code notranslate htmlHigh">
+            <span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >!DOCTYPE<span class="attributecolor" style="color: red">
+                html</span
+              ><span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br />
+            <span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >html<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >head<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >title<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            >Page Title<span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/title<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br />
+            <span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/head<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br />
+            <span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >body<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><br /><span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >h1<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            >My First Heading<span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/h1<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >p<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            >My first paragraph.<span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/p<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><br />
+            <span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/body<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            ><br /><span class="tagnamecolor" style="color: brown"
+              ><span class="tagcolor" style="color: mediumblue">&lt;</span
+              >/html<span class="tagcolor" style="color: mediumblue"
+                >&gt;</span
+              ></span
+            >
+          </div>
+        </div>
+        <hr />
+        <h3>Example Explained</h3>
+        <ul>
+          <li>
+            The
+            <code class="w3-codespan">&lt;!DOCTYPE html&gt;</code> declaration
+            defines that this document is an HTML5 document
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;html&gt;</code> element is the
+            root element of an HTML page
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;head&gt;</code> element contains
+            meta information about the HTML page
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;title&gt;</code> element specifies
+            a title for the HTML page (which is shown in the browser's title bar
+            or in the page's tab)
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;body&gt;</code> element defines
+            the document's body, and is a container for all the visible
+            contents, such as headings, paragraphs, images, hyperlinks, tables,
+            lists, etc.
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;h1&gt;</code> element defines a
+            large heading
+          </li>
+          <li>
+            The <code class="w3-codespan">&lt;p&gt;</code> element defines a
+            paragraph
+          </li>
+        </ul>
+        <hr />
+        <h2>HTML Page Structure</h2>
+        <p>Below is a visualization of an HTML page structure:</p>
+        <div
+          class="ws-grey"
+          style="width: 99%; border: 1px solid grey; padding: 3px; margin: 0"
+        >
+          &lt;html&gt;
+          <div
+            style="
+              width: 90%;
+              border: 1px solid grey;
+              padding: 3px;
+              margin: 20px;
+            "
+          >
+            &lt;head&gt;
+            <div
+              style="
+                width: 90%;
+                border: 1px solid grey;
+                padding: 5px;
+                margin: 20px;
+              "
+            >
+              &lt;title&gt;Page title&lt;/title&gt;
+            </div>
+            &lt;/head&gt;
+          </div>
+          <div
+            class="ws-grey"
+            style="
+              width: 90%;
+              border: 1px solid grey;
+              padding: 3px;
+              margin: 20px;
+            "
+          >
+            &lt;body&gt;
+            <div
+              class="w3-white"
+              style="
+                width: 90%;
+                border: 1px solid grey;
+                padding: 3px;
+                margin: 20px;
+              "
+            >
+              <div
+                style="
+                  width: 90%;
+                  border: 1px solid grey;
+                  padding: 5px;
+                  margin: 20px;
+                "
+              >
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+              </div>
+              <div
+                style="
+                  width: 90%;
+                  border: 1px solid grey;
+                  padding: 5px;
+                  margin: 20px;
+                "
+              >
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+              </div>
+              <div
+                style="
+                  width: 90%;
+                  border: 1px solid grey;
+                  padding: 5px;
+                  margin: 20px;
+                "
+              >
+                &lt;p&gt;This is another paragraph.&lt;/p&gt;
+              </div>
+            </div>
+            &lt;/body&gt;
+          </div>
+          &lt;/html&gt;
+        </div>
+        <a
+          class="learn_more_link"
+          href="https://www.w3schools.com/html/html_intro.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><button>Learn More..</button></a
+        >
+      </div>
+
+      <div class="tab-content">
+        <h1>What is CSS?</h1>
+        <p>
+          architecto provident distinctio nobis minima incidunt ab aliquam nam
+          eius adipisci praesentium, molestiae optio, id accusantium expedita
+          quis quae.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Molestias alias eaque architecto provident distinctio nobis minima
+          incidunt ab aliquam nam eius adipisci praesentium, molestiae optio, id
+          accusantium expedita quis quae.
+        </p>
+      </div>
+
+      <div class="tab-content">
+        <h1>What is JavaScript?</h1>
+        <p>
+          adipisci praesentium, molestiae optio, id accusantium expedita quis
+          quae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Molestias alias eaque architecto provident distinctio nobis minima
+          incidunt ab aliquam nam eius adipisci praesentium, molestiae optio, id
+          accusantium expedita quis quae.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      let tab_content = document.querySelectorAll(".tab-content");
+      let mytabs = document.querySelector(".tab_btn");
+      tab_content[0].style.display = "block";
+      let tab_links = document.querySelectorAll(".tab_links");
+      let line = document.querySelector(".line");
+
+      for (i = 0; i < tab_links.length; i++) {
+        tab_links[i].addEventListener("click", function () {
+          let index = Array.prototype.indexOf.call(tab_links, this);
+
+          console.log(index);
+          for (i = 0; i < tab_links.length; i++) {
+            tab_links[i].classList.remove("active");
+            tab_content[i].style.display = "none";
+          }
+          this.classList.add("active");
+          line.style.width = this.offsetWidth + "px";
+          line.style.left = this.offsetLeft + "px";
+          // tab_content[i].style.display = "block";
+          tab_content[index].style.display = "block";
+        });
+      }
+    </script>
+  </body>
+</html>
